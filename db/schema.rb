@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115124321) do
+ActiveRecord::Schema.define(version: 20190115150343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,17 +32,42 @@ ActiveRecord::Schema.define(version: 20190115124321) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name"
-    t.string "nickname"
+    t.string "first_name"
+    t.string "last_name"
     t.string "image"
     t.string "email"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "centre_ps"
+    t.string "contact"
     t.index ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_admins_on_uid_and_provider", unique: true
   end
 
+  create_table "admins_recalls", force: :cascade do |t|
+    t.bigint "admin_id"
+    t.bigint "recall_id"
+    t.index ["admin_id"], name: "index_admins_recalls_on_admin_id"
+    t.index ["recall_id"], name: "index_admins_recalls_on_recall_id"
+  end
+
+  create_table "recalls", force: :cascade do |t|
+    t.string "parent_name"
+    t.string "child_name"
+    t.string "bithday"
+    t.string "contact_parent"
+    t.boolean "vaccine1"
+    t.boolean "vaccine2"
+    t.boolean "vaccine3"
+    t.boolean "vaccine4"
+    t.boolean "vaccine5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "admins_recalls", "admins"
+  add_foreign_key "admins_recalls", "recalls"
 end

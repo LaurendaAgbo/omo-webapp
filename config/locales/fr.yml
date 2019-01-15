@@ -1,0 +1,123 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+fr:
+  admins:
+    password: "Mot de passe"
+    confirm_password: "Confirmer le mot de passe"
+    mail: "Email"
+    first_name: "Prénom"
+    last_name: "Nom"
+    centre_ps: "Centre de Promotion Sociale"
+    new_password: "Nouveau mot de passe"
+    contact: "Contact"
+    confirm_new_password: "Confirmer le nouveau mot de passe"
+    confirmations:
+      new:
+        resend_confirmation: "Renvoyer l'email de confirmation"
+        submit_button: "Renvoyer l'email"
+
+    passwords:
+      edit:
+        header: "Changer votre mot de passe"
+      new:
+        header: "Réinitialiser votre mot de passe"
+        reset_password: "Réinitialiser"
+    registrations:
+      new:
+        user_nformations: "Informations de connexion"
+        submit: "Valider"
+        login: "Connectez-vous"
+        accept: "Créer un compte signifie que vous acceptez les "
+        terms_of_service: "conditions d'utilisation"
+        and: " et la "
+        privacy_policy: "politique de confidentialité"
+        of_bidofi: " de Omo."
+        account?: "Vous avez déjà un compte?"
+
+      edit:
+        header: "Modifier votre profil"
+        mail: "Entrer votre email"
+        new_password_assistive_text: "Laissez vide si vous ne voulez pas le changer"
+        wait_confirmation: "En attente de confirmation pour: "
+        current_password: "Actuel mot de passe"
+        current_password_assistive_text: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications"
+        submit: "Modifier"
+    sessions:
+      new:
+        login: "Connexion"
+        login_submit: "Se connecter"
+        no_account?: "Pas encore de compte?"
+        sign_up_now: "Inscrivez-vous dès maintenant"
+    shared:
+      links:
+        login: "Se connecter"
+        sign_up: "S'enregistrer"
+        received_email?: "Email de confirmation non reçu?"
+        reset_mail?: "Vous n'avez pas reçu le mail de réinitialisation?"
+    unlocks:
+      new:
+        unlock_header: "Renvoyer les instructions de dévérouillage"
+        submit: "Valider"
+  activerecord:
+    attributes:
+      user:
+        username: "Se souvenir de moi"

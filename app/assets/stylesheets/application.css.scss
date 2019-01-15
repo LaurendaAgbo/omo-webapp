@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro|Work+Sans');
+@import "font-awesome-sprockets";
+@import "font-awesome";
