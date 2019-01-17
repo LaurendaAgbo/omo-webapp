@@ -23,5 +23,7 @@ module OmoApp
     I18n.available_locales = %i[en fr]
     # Set default locale to something other than :en
     I18n.default_locale = :fr
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end
