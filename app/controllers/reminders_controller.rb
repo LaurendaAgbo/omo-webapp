@@ -14,8 +14,6 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.admin_id = current_admin.id
 
-    p params
-
     if @reminder.save
       # VaccineReminderJob.set(wait: 1.weeks).perform_later(@reminder.id, @reminder.parent_phone, 1)
       # VaccineReminderJob.set(wait: 6.weeks).perform_later(@reminder.id, @reminder.parent_phone, 2)
@@ -52,7 +50,38 @@ class RemindersController < ApplicationController
   def edit
   end
 
+  def call
+    reminder = Reminder.find(params[:reminder_id])
+
+    if params[:vaccination_number] == '1'
+      vaccination_name = t('reminder.index.vaccine1')
+    elsif params[:vaccination_number] == '2'
+      vaccination_name = t('reminder.index.vaccine2')
+    elsif params[:vaccination_number] == '3'
+      vaccination_name = t('reminder.index.vaccine3')
+    elsif params[:vaccination_number] == '4'
+      vaccination_name = t('reminder.index.vaccine4')
+    elsif params[:vaccination_number] == '5'
+      vaccination_name = t('reminder.index.vaccine5')
+    end
+
+
+    p reminder.child_name
+    p vaccination_name
+
+    text = 'Vous devez emmener ' + reminder.child_name + ' faire la vaccination ' + vaccination_name + ' aujourd\'hui.'
+
+    render json: [
+      {
+        'action': 'talk',
+        'voiceName': 'Russell',
+        'text': text
+      }
+    ]
+  end
+
   private
+
   def reminder_params
     params.require(:reminder).permit(:parent_name, :child_name, :child_birthday, :parent_phone, :vaccine1, :vaccine2, :vaccine3, :vaccine4, :vaccine5)
   end
