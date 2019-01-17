@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  reminder:
+    new:
+      parent_name: "Parent name"
+      child_name: "Child name"
+      child_birthday: "Child birthday"
+      parent_phone: "Parent phone"
+      vaccines_list: "Vaccines list"
+      vaccine1: "BCG + Polio"
+      vaccine2: "DTCP/Hep B 1 + Polio 1"
+      vaccine3: "DTCP/Hep B 2 + Polio 2"
+      vaccine4: "DTCP/Hep B 3 + Polio 3 + Polio injectable"
+      vaccine5: "VAA and VAR"
+      submit_button: "Save reminder"

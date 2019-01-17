@@ -125,3 +125,37 @@ fr:
     attributes:
       user:
         username: "Se souvenir de moi"
+
+  reminder:
+    new:
+      page_title: "Créer un rappel"
+      parent_name: "Nom du parent"
+      child_name: "Nom de l'enfant"
+      child_birthday: "Date de naissance de l'enfant"
+      parent_phone: "N° de téléphone du parent"
+      vaccines_list: "Liste des vaccins"
+      vaccine1: "BCG + Polio"
+      vaccine2: "DCTP/Hep B 1 + Polio 1"
+      vaccine3: "DTCP/Hep B 2 + Polio 2"
+      vaccine4: "DTCP/Hep B 3 + Polio 3 + Polio injectable"
+      vaccine5: "VAA et VAR"
+      submit_button: "Enregister le rappel"
+    index:
+      page_title: "Liste des rappels"
+      new_reminder: "Créer un nouveau rappel"
+      child_name: "Nom de l'enfant"
+      child_birthday: "Date de naissance de l'enfant"
+      parent_name: "Nom du parent"
+      parent_phone: "N° de téléphone du parent"
+      vaccine1: "BCG + Polio"
+      vaccine2: "DCTP/Hep B 1 + Polio 1"
+      vaccine3: "DTCP/Hep B 2 + Polio 2"
+      vaccine4: "DTCP/Hep B 3 + Polio 3 + Polio injectable"
+      vaccine5: "VAA et VAR"
+      show_link: "Voir la fiche"
+      call_link: "Appeler le parent"
+      edit_link: "Modifier le rappel"
+    show:
+      page_title: "Fiche de rappel des vaccinations pour %{child_name}"
+    edit:
+      page_title: "Mettre à jour le rappel"
