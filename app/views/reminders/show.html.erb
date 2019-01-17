@@ -1,0 +1,58 @@
+<% if notice %>
+  <p class="notice alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="notice alert alert-danger"><%= alert %></p>
+<% end %>
+
+<h1><%= t('reminder.show.page_title', child_name: @reminder.child_name) %></h1>
+
+<div><%= t('reminder.index.child_name') + ': ' + @reminder.child_name %></div>
+<div><%= t('reminder.index.child_birthday') + ': ' + @reminder.child_birthday.to_s %></div>
+<div><%= t('reminder.index.parent_name') + ': ' + @reminder.parent_name %></div>
+<div><%= t('reminder.index.parent_phone') + ': ' + @reminder.parent_phone %></div>
+<div>
+  <%= t('reminder.index.vaccine1') + ': ' %>
+  <% if @reminder.vaccine1 %>
+    <%= t('reminder.index.vaccination_done') %>
+  <% else %>
+    <%= t('reminder.index.vaccination_not_done') %>
+  <% end %>
+</div>
+<div>
+  <%= t('reminder.index.vaccine2') + ': ' %>
+  <% if @reminder.vaccine2 %>
+    <%= t('reminder.index.vaccination_done') %>
+  <% else %>
+    <%= t('reminder.index.vaccination_not_done') %>
+  <% end %>
+</div>
+<div>
+  <%= t('reminder.index.vaccine3') + ': ' %>
+  <% if @reminder.vaccine3 %>
+    <%= t('reminder.index.vaccination_done') %>
+  <% else %>
+    <%= t('reminder.index.vaccination_not_done') %>
+  <% end %>
+</div>
+<div>
+  <%= t('reminder.index.vaccine4') + ': ' %>
+  <% if @reminder.vaccine4 %>
+    <%= t('reminder.index.vaccination_done') %>
+  <% else %>
+    <%= t('reminder.index.vaccination_not_done') %>
+  <% end %>
+</div>
+<div>
+  <%= t('reminder.index.vaccine5') + ': ' %>
+  <% if @reminder.vaccine5 %>
+    <%= t('reminder.index.vaccination_done') %>
+  <% else %>
+    <%= t('reminder.index.vaccination_not_done') %>
+  <% end %>
+</div>
+<div>
+  <a href="tel:<%= @reminder.parent_phone %>"><%= t('reminder.index.call_link') %></a>
+  <%= link_to t('reminder.index.edit_link'), edit_reminder_path(@reminder) %>
+  <%= link_to t('reminder.index.delete_link'), reminder_path(@reminder), method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %>
+</div>

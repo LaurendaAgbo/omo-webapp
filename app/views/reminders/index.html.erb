@@ -1,0 +1,90 @@
+<h1><%= t('reminder.index.page_title') %></h1>
+
+<%= link_to t('reminder.index.new_reminder'), new_reminder_path %>
+
+<table>
+  <thead>
+    <td><%= t('reminder.index.child_name') %></td>
+    <td><%= t('reminder.index.child_birthday') %></td>
+    <td><%= t('reminder.index.parent_name') %></td>
+    <td><%= t('reminder.index.parent_phone') %></td>
+    <td><%= t('reminder.index.vaccine1') %></td>
+    <td><%= t('reminder.index.vaccine2') %></td>
+    <td><%= t('reminder.index.vaccine3') %></td>
+    <td><%= t('reminder.index.vaccine4') %></td>
+    <td><%= t('reminder.index.vaccine5') %></td>
+    <td><%= t('reminder.index.show_link') %></td>
+    <td><%= t('reminder.index.call_link') %></td>
+    <td><%= t('reminder.index.edit_link') %></td>
+    <td><%= t('reminder.index.delete_link') %></td>
+  </thead>
+
+  <tbody>
+    <% @reminders.each do |reminder| %>
+      <td><%= reminder.child_name %></td>
+      <td><%= reminder.child_birthday %></td>
+      <td><%= reminder.parent_name %></td>
+      <td><%= reminder.parent_phone %></td>
+      <td>
+        <% if reminder.vaccine1 %>
+          <%= t('reminder.index.vaccination_done') %>
+        <% else %>
+          <%= t('reminder.index.vaccination_not_done') %>
+        <% end %>
+      </td>
+      <td>
+        <% if reminder.vaccine2 %>
+          <%= t('reminder.index.vaccination_done') %>
+        <% else %>
+          <%= t('reminder.index.vaccination_not_done') %>
+        <% end %>
+      </td>
+      <td>
+        <% if reminder.vaccine3 %>
+          <%= t('reminder.index.vaccination_done') %>
+        <% else %>
+          <%= t('reminder.index.vaccination_not_done') %>
+        <% end %>
+      </td>
+      <td>
+        <% if reminder.vaccine4 %>
+          <%= t('reminder.index.vaccination_done') %>
+        <% else %>
+          <%= t('reminder.index.vaccination_not_done') %>
+        <% end %>
+      </td>
+      <td>
+        <% if reminder.vaccine5 %>
+          <%= t('reminder.index.vaccination_done') %>
+        <% else %>
+          <%= t('reminder.index.vaccination_not_done') %>
+        <% end %>
+      </td>
+
+
+
+      <td><%= link_to t('reminder.index.show_link'), reminder_path(reminder) %></td>
+      <td><a href="tel:<%= reminder.parent_phone %>"><%= t('reminder.index.call_link') %></a></td>
+      <td><%= link_to t('reminder.index.edit_link'), edit_reminder_path(reminder) %></td>
+      <td><%= link_to t('reminder.index.delete_link'), reminder_path(reminder), method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %></td>
+    <% end %>
+  </tbody>
+
+  <tfoot>
+    <td><%= t('reminder.index.child_name') %></td>
+    <td><%= t('reminder.index.child_birthday') %></td>
+    <td><%= t('reminder.index.parent_name') %></td>
+    <td><%= t('reminder.index.parent_phone') %></td>
+    <td><%= t('reminder.index.vaccine1') %></td>
+    <td><%= t('reminder.index.vaccine2') %></td>
+    <td><%= t('reminder.index.vaccine3') %></td>
+    <td><%= t('reminder.index.vaccine4') %></td>
+    <td><%= t('reminder.index.vaccine5') %></td>
+    <td><%= t('reminder.index.show_link') %></td>
+    <td><%= t('reminder.index.call_link') %></td>
+    <td><%= t('reminder.index.edit_link') %></td>
+    <td><%= t('reminder.index.delete_link') %></td>
+  </tfoot>
+</table>
+
+<%= link_to t('reminder.index.new_reminder'), new_reminder_path %>
