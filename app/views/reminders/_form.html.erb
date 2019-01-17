@@ -1,0 +1,49 @@
+<%= form_with(model: @reminder, local: true) do |form| %>
+
+  <div class="field form-group">
+    <%= form.text_field :parent_name, required: true, autofocus: true, class: "form-control", placeholder: t('reminder.new.parent_name') %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :child_name, required: true, class: "form-control", placeholder: t('reminder.new.child_name') %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.date_field :child_birthday, required: true, class: "form-control", placeholder: t('reminder.new.child_birthday') %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :parent_phone, required: true, class: "form-control", placeholder: t('reminder.new.parent_phone') %>
+  </div>
+
+  <p><strong><%= t('reminder.new.vaccines_list') %></strong></p>
+
+  <div class="field form-group">
+    <%= form.label t('reminder.new.vaccine1') %>
+    <%= form.check_box :vaccine1 %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label t('reminder.new.vaccine2') %>
+    <%= form.check_box :vaccine2 %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label t('reminder.new.vaccine3') %>
+    <%= form.check_box :vaccine3 %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label t('reminder.new.vaccine4') %>
+    <%= form.check_box :vaccine4 %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label t('reminder.new.vaccine5') %>
+    <%= form.check_box :vaccine5 %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.submit t('reminder.new.submit_button') %>
+  </div>
+<% end %>
