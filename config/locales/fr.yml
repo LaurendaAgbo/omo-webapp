@@ -154,9 +154,16 @@ fr:
       vaccine3: "DTCP/Hep B 2 + Polio 2"
       vaccine4: "DTCP/Hep B 3 + Polio 3 + Polio injectable"
       vaccine5: "VAA et VAR"
+      vaccination_done: "Oui"
+      vaccination_not_done: "Non"
       show_link: "Voir la fiche"
       call_link: "Appeler le parent"
       edit_link: "Modifier le rappel"
+      delete_link: "Supprimer le rappel"
+      confirm_deletion: "Êtes-vous sûr de vouloir supprimer le rappel?"
+    create:
+      reminder_saved: "Le rappel a bien été enregistré !"
+      reminder_failed: "Le rappel n'a pas pu être enregistré. Essayez à nouveau."
     show:
       page_title: "Fiche de rappel des vaccinations pour %{child_name}"
     edit:
