@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190115150343) do
+ActiveRecord::Schema.define(version: 20190117071654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,18 +47,11 @@ ActiveRecord::Schema.define(version: 20190115150343) do
     t.index ["uid", "provider"], name: "index_admins_on_uid_and_provider", unique: true
   end
 
-  create_table "admins_recalls", force: :cascade do |t|
-    t.bigint "admin_id"
-    t.bigint "recall_id"
-    t.index ["admin_id"], name: "index_admins_recalls_on_admin_id"
-    t.index ["recall_id"], name: "index_admins_recalls_on_recall_id"
-  end
-
-  create_table "recalls", force: :cascade do |t|
+  create_table "reminders", force: :cascade do |t|
     t.string "parent_name"
     t.string "child_name"
-    t.string "bithday"
-    t.string "contact_parent"
+    t.string "child_birthday"
+    t.string "parent_phone"
     t.boolean "vaccine1"
     t.boolean "vaccine2"
     t.boolean "vaccine3"
@@ -68,6 +61,4 @@ ActiveRecord::Schema.define(version: 20190115150343) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "admins_recalls", "admins"
-  add_foreign_key "admins_recalls", "recalls"
 end
