@@ -61,6 +61,7 @@
 
 fr:
   admins:
+    appname: "ọmọ"
     password: "Mot de passe"
     confirm_password: "Confirmer le mot de passe"
     mail: "Email"
@@ -74,6 +75,7 @@ fr:
       new:
         resend_confirmation: "Renvoyer l'email de confirmation"
         submit_button: "Renvoyer l'email"
+    header: "Mot de passe oublié?"
 
     passwords:
       edit:
@@ -85,13 +87,15 @@ fr:
       new:
         user_nformations: "Informations de connexion"
         submit: "Valider"
-        login: "Connectez-vous"
+        login: "Connexion"
         accept: "Créer un compte signifie que vous acceptez les "
         terms_of_service: "conditions d'utilisation"
         and: " et la "
         privacy_policy: "politique de confidentialité"
-        of_bidofi: " de Omo."
-        account?: "Vous avez déjà un compte?"
+        of_omo: " de ọmọ."
+        account?: "Avez-vous déjà un compte?"
+      message: "Connecter vous a ọmọ pour le rappel périodique des vaccinations aux personnels de santé"
+
 
       edit:
         header: "Modifier votre profil"
@@ -105,8 +109,8 @@ fr:
       new:
         login: "Connexion"
         login_submit: "Se connecter"
-        no_account?: "Pas encore de compte?"
-        sign_up_now: "Inscrivez-vous dès maintenant"
+        no_account?: "Avez-vous déjà un compte?"
+        sign_up_now: "Inscription"
     shared:
       links:
         login: "Se connecter"

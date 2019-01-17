@@ -1,0 +1,182 @@
+/*// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+/* admin general style */
+.admin h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.admin h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.admin p {
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin: auto;
+  font-weight: bold;
+}
+
+.admin .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.admin input[type=submit] {
+  margin: 1rem auto;
+}
+
+.admin .content-box + div {
+  margin-top: 1rem;
+}
+
+.admin .content-box + div a {
+  color: #fff;
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.admin .content-box + div a:hover {
+  opacity: 1;
+}
+
+.admin.login form,
+.admin.invitation form,
+.admin.confirm form,
+.admin.edit-profile form,
+.admin.password form,
+.account-setting form {
+  width: 80%;
+  margin: 4rem auto 2rem;
+}
+/* admin general style end */
+
+
+/* admin registration style */
+.admin.registration .admin-info h5,
+.admin.registration .enterprise-info h5 {
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin.registration .actions .btn,
+.admin.edit-profile .actions .btn,
+.admin.login .actions .btn,
+.admin.invitation .actions .btn,
+.content-box.account-setting .actions .btn{
+  width: 70%;
+  margin: 2rem 0 1rem;
+  color: #0BBBEF!important;
+  height: 70px;
+  border-radius: 4px!important;
+}
+
+.admin.registration .login,
+.admin.login .login-button {
+  color: #0BBBEF !important;
+  background: none!important;
+  border: 2px solid #EF7C0B !important;
+  border-radius: 4px!important;
+  width: 30%;
+  font-size: 1rem;
+  margin-left: 1rem;
+  height: 70%;
+}
+
+.admin.registration .all-input .form-control,
+.admin.edit-profile .form-control,
+.admin.login .form-control,
+.admin.invitation .form-control {
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.admin.registration form {
+  width: 86%;
+  margin: 4rem auto 2rem;
+}
+
+.admin.registration .small a {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.small {
+  font-size: 1rem!important;
+}
+
+/* admin registration style end */
+
+/* admin edit profile style */
+.admin.edit-profile .actions .btn {
+  margin-top: 0rem;
+}
+
+.admin.edit-profile em.small {
+  font-size: 0.75rem!important;
+}
+/* admin edit profile style end */
+
+/*admin invitation index*/
+.admin.invitation.list form {
+  margin: 1rem auto 1rem;
+}
+
+.admin.invitation.list .member {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.admin.invitation.list .name {
+  padding-top: 0.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admin.invitation.list .action .btn {
+  width: 100%;
+  margin: 0;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.admin.invitation.list .invite-new-member {
+  width: 80%;
+  height: 70px;
+  padding-top: 1.3rem;
+}
+/*admin invitation index end*/
+
+/* admin login style */
+.admin.login .pw-forgot, .admin.login .remember-me {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.admin.login .pw-forgot {
+  float: left;
+}
+
+.admin.login .remember-me {
+  float: right;
+}
+
+.admin.login .login-button {
+  width: 40%;
+}
+
+.pw-forgot a {
+  opacity: 1;
+}
+
+.admin.login .actions .btn{
+  width: 80%;
+  height: 75px;
+}
+/* admin login style end */
