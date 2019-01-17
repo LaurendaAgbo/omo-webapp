@@ -21,5 +21,6 @@
 /yarn-error.log
 
 .env
+.env~40831ba2e5d47d1f3ca0ea1f33e94b3f53bf812a
 .byebug_history
 nexmo_private.key
