@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   # mount_devise_token_auth_for 'Admin', at: 'auth'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -10,5 +12,7 @@ Rails.application.routes.draw do
     confirmations: 'admins/confirmations',
     unlocks: 'admins/unlocks',
     invitations: 'admins/invitations'
-  }, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }  
+  }, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+
+  resources :reminders
 end
