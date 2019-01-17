@@ -67,9 +67,9 @@ fr:
     mail: "Email"
     first_name: "Prénom"
     last_name: "Nom"
-    centre_ps: "Centre de Promotion Sociale"
+    centre_ps: "Centre de santé"
     new_password: "Nouveau mot de passe"
-    contact: "Contact"
+    contact: "N° de téléphone"
     confirm_new_password: "Confirmer le nouveau mot de passe"
     confirmations:
       new:
@@ -94,7 +94,7 @@ fr:
         privacy_policy: "politique de confidentialité"
         of_omo: " de ọmọ."
         account?: "Avez-vous déjà un compte?"
-      message: "Connecter vous a ọmọ pour le rappel périodique des vaccinations aux personnels de santé"
+      message: "S'inscrire"
 
 
       edit:
@@ -109,12 +109,14 @@ fr:
       new:
         login: "Connexion"
         login_submit: "Se connecter"
-        no_account?: "Avez-vous déjà un compte?"
+        no_account?: "Vous n'avez pas encore de compte?"
         sign_up_now: "Inscription"
+        remember_me: "Se souvenir de moi"
+
     shared:
       links:
         login: "Se connecter"
-        sign_up: "S'enregistrer"
+        sign_up: "S'inscrire"
         received_email?: "Email de confirmation non reçu?"
         reset_mail?: "Vous n'avez pas reçu le mail de réinitialisation?"
     unlocks:
