@@ -1,8 +1,9 @@
+
 <div class="text-center">
   <div class="text-center">
     <div class="d-flex justify-content-center row">
       <div class="col-11 col-md-7 col-lg-5">
-        <h5><%= t("admins.confirmations.new.resend_confirmation") %></h5>
+        <h3><%= t("admins.confirmations.new.resend_confirmation") %></h3>
 
         <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
           <%= devise_error_messages! %>

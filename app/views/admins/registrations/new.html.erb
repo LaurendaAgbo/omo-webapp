@@ -1,47 +1,70 @@
-<h2>Sign up</h2>
+<%= stylesheet_link_tag "admin" %>
 
-<div class="container">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="errors">
-      <%= devise_error_messages! %>
-    </div>
-
-    
-    <div class="row">
-      <div class="col-md-6">
-        <div class="field form-group">
-          <input type="text" name="centre_ps" class="form-control" autofocus="true" placeholder="<%= t("admins.centre_ps") %>" required>
-        </div>
-        <div class="field form-group">
-          <input type="text" name="first_name" class="form-control" autofocus="true" placeholder="<%= t("admins.first_name") %>" required>
-        </div>
-        <div class="field form-group">
-          <input type="text" name="last_name" class="form-control" autofocus="true" placeholder="<%= t("admins.last_name") %>" required>
-        </div>
-        <div class="field form-group">
-          <input type="text" name="contact" class="form-control" autofocus="true" placeholder="<%= t("admins.contact") %>" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="admin-info">
-          <div class="field form-group">
-            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: t("admins.mail"), required: true %>
+<div class="container pt-5">
+  <div class="text-center admin registration">
+    <div class="d-flex justify-content-center row">
+      <div class="col-11 col-md-8 col-lg-8">
+        <div class="row">
+          <div class="col-md-3">
+            <%= image_tag("logo.png", alt: t("admins.appname"), class: "logo img-fluid") %>
           </div>
-
-          <div class="field form-group">
-            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t("admins.password"), required: true %>
+          <div class="col-md-9 d-flex justify-content-end pt-5">
+            <%= t("admins.registrations.new.account?") %>
+            <%= link_to t("admins.registrations.new.login"), new_admin_session_path(), class:"btn btn-primary login" %>
           </div>
-
-          <div class="field form-group">
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: t("admins.confirm_password"), required: true %>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="actions form-group">
-          <%= f.submit t("admins.registrations.new.submit"), class: "btn btn-primary" %>
         </div>
       </div>
     </div>
-  <% end %>
+  </div>
+
+
+  <div class="text-center admin registration">
+    <div class="d-flex justify-content-center row">
+      <div class="col-11 col-md-8 col-lg-8">
+        <div class="content-box">
+          <div class="d-flex justify-content-center row text-center pt-3">
+            <h3 class="pt-5"><%= t("admins.registrations.message") %></h3>
+          </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="errors">
+              <%= devise_error_messages! %>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="field form-group">
+                  <input type="text" name="centre_ps" class="form-control" autofocus="true" placeholder="<%= t("admins.centre_ps") %>" required>
+                </div>
+                <div class="field form-group">
+                  <input type="text" name="first_name" class="form-control" autofocus="true" placeholder="<%= t("admins.first_name") %>" required>
+                </div>
+                <div class="field form-group">
+                  <input type="text" name="last_name" class="form-control" autofocus="true" placeholder="<%= t("admins.last_name") %>" required>
+                </div>
+                <div class="field form-group">
+                  <input type="text" name="contact" class="form-control" autofocus="true" placeholder="<%= t("admins.contact") %>" required>
+                </div>
+                <div class="admin-info">
+                  <div class="field form-group">
+                    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: t("admins.mail"), required: true %>
+                  </div>
+
+                  <div class="field form-group">
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t("admins.password"), required: true %>
+                  </div>
+
+                  <div class="field form-group pb-5">
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: t("admins.confirm_password"), required: true %>
+                  </div>
+                </div>
+                <div class="actions form-group">
+                  <%= f.submit t("admins.registrations.new.submit"), class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

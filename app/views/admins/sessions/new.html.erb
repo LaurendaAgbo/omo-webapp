@@ -1,46 +1,63 @@
-<h2>Log in</h2>
+<%= stylesheet_link_tag "admin" %>
 
-
-<div class="text-center">
-  <div class="d-flex justify-content-center">
-    <div class="col-11 col-md-7 col-lg-7">
-      <%= t("admins.sessions.new.no_account?") %>
-      <%= link_to t("admins.sessions.new.sign_up_now"), new_admin_registration_path(), class:"btn btn-primary login-button" %>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <% if notice.present? %>
-          <p class="notice alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert.present? %>
-          <p class="notice alert alert-danger"><%= alert %></p>
-        <% end %>  
-
-        <div class="field form-group">
-          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: t("admins.mail") %>
+<div class="container pt-5">
+  <div class="text-center admin registration px-3">
+    <div class="d-flex justify-content-center row">
+      <div class="col-11 col-md-8 col-lg-8">
+        <div class="row">
+          <div class="col-md-3">
+            <%= image_tag("logo.png", alt: t("admins.appname"), class: "logo img-fluid") %>
+          </div>
+          <div class="col-md-9 d-flex justify-content-end pt-5">
+            <%= t("admins.sessions.new.no_account?") %>
+            <%= link_to t("admins.sessions.new.sign_up_now"), new_admin_registration_path(), class:"btn btn-primary login" %>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="field form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t("admins.password") %>
-        </div>
+  <div class="text-center admin login">
+    <div class="d-flex justify-content-center">
+      <div class="col-11 col-md-8 col-lg-8">
+        <div class="content-box">
+          <h3 class="pt-5"><%= t("admins.sessions.new.login_submit") %></h3>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <% if notice.present? %>
+              <p class="notice alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert.present? %>
+              <p class="notice alert alert-danger"><%= alert %></p>
+            <% end %>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="field form-group">
-            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <div class="pw-forgot">
-                <%= link_to t("admins.header"), new_password_path(resource_name) %>
+            <div class="field form-group">
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: t("admins.mail") %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: t("admins.password") %>
+            </div>
+
+            <% if devise_mapping.rememberable? -%>
+              <div class="field form-group">
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  <div class="pw-forgot">
+                    <%= link_to t("admins.header"), new_password_path(resource_name) %>
+                  </div>
+                <% end -%>
+                <div class="remember-me">
+                  <%= f.label :remember_me %>
+                  <%= f.check_box :remember_me %>
+                </div>
               </div>
             <% end -%>
-            <div class="">
-              <%= f.label :remember_me %>
-              <%= f.check_box :remember_me %>
-            </div>
-          </div>
-        <% end -%>
 
-        <div class="actions form-group">
-          <%= f.submit  t("admins.sessions.new.login_submit"), class: "btn btn-primary" %>
+            <div class="actions form-group">
+              <%= f.submit  t("admins.sessions.new.login_submit"), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

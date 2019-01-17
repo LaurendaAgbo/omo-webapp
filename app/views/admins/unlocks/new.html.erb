@@ -1,11 +1,9 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
 <div  class="text-center">
   <div class="d-flex justify-content-center">
     <div class="col-11 col-md-9 col-lg-7">
       <h2><%= t("admins.unlocks.new.unlock_header") %></h2>
-
         <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
           <%= devise_error_messages! %>
 
