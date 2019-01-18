@@ -7,7 +7,7 @@
         <div class="content-box">
 
           <%= form_with(model: @reminder, local: true) do |form| %>
-          
+
             <div class="field form-group">
               <%= form.text_field :parent_name, required: true, autofocus: true, class: "form-control", placeholder: t('reminder.new.parent_name') %>
             </div>
@@ -57,7 +57,7 @@
               <div class=" d-flex justify-content-start">
                 <div class="field form-group">
                   <%= form.label t('reminder.new.vaccine4'), class: "pl-3" %>
-                  <%= form.check_box :vaccine1 %>
+                  <%= form.check_box :vaccine4 %>
                 </div>
               </div>
             </div>
