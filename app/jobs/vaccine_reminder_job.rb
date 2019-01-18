@@ -16,7 +16,7 @@ class VaccineReminderJob < ApplicationJob
         number: ENV['NEXMO_PHONE_NUMBER']
       },
       answer_url: [
-        outbound_call_url("#{ENV['ROOT_URL']}/call/#{vaccination_number}/#{@reminder.id}")        
+        outbound_call_url("#{ENV['ROOT_URL']}/call/#{vaccination_number}/#{@reminder.id}")
       ]
     })
 

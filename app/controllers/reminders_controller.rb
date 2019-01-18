@@ -15,6 +15,7 @@ class RemindersController < ApplicationController
     @reminder.admin_id = current_admin.id
 
     if @reminder.save
+      VaccineReminderJob.set(wait: 1.minute).perform_later(@reminder.id, @reminder.parent_phone, 1)
       # VaccineReminderJob.set(wait: 1.weeks).perform_later(@reminder.id, @reminder.parent_phone, 1)
       # VaccineReminderJob.set(wait: 6.weeks).perform_later(@reminder.id, @reminder.parent_phone, 2)
       # VaccineReminderJob.set(wait: 10.weeks).perform_later(@reminder.id, @reminder.parent_phone, 3)
