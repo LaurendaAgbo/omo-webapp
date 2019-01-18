@@ -408,8 +408,9 @@ a.btn {
 }
 
 .btn-secondary, .btn-secondary[disabled] {
-  background-color: #FF9300;
+  background-color: #EF7C0B;
   height: 40%;
+  border-radius: 4px;
 }
 
 /* Déclaration pour IE qui assimile l'état :focus à l'état :active */

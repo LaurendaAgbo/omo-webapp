@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ọmọ</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reminder' %>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg justify-content-between logout-navbar">
+      <a class="navbar-brand" href="/"><%= image_tag("logo.png", alt: t("admins.appname")) %></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><%= link_to t("reminder.index.new_reminder"), new_reminder_path, class:"btn btn-secondary " %></li>
+          <li class="nav-item"><%= link_to t("reminder.index.page_title"), reminders_path, class:"btn btn-primary reminder-submit" %></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid ">
+      <%= yield %>
+    </div>
+  </body>
+</html>
