@@ -5,7 +5,7 @@
     <div class="col-lg-12">
       <h1 class="text-center"><%= t('reminder.index.page_title') %></h1>
 
-      <%= link_to t('reminder.index.new_reminder'), new_reminder_path, class:"btn btn-primary reminder" %>
+      <%# <%= link_to t('reminder.index.new_reminder'), new_reminder_path, class:"btn btn-primary reminder" %>
       <div class="py-5">
         <table class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
           <thead>
@@ -14,11 +14,6 @@
               <th><%= t('reminder.index.child_birthday') %></th>
               <th><%= t('reminder.index.parent_name') %></th>
               <th><%= t('reminder.index.parent_phone') %></th>
-              <th><%= t('reminder.index.vaccin1') %></th>
-              <th><%= t('reminder.index.vaccin2') %></th>
-              <th><%= t('reminder.index.vaccin3') %></th>
-              <th><%= t('reminder.index.vaccin4') %></th>
-              <th><%= t('reminder.index.vaccin5') %></th>
               <th><%= t('reminder.index.show_link') %></th>
               <th><%= t('reminder.index.call_link') %></th>
               <th><%= t('reminder.index.edit_link') %></th>
@@ -34,7 +29,7 @@
                 <td><%= reminder.child_birthday %></td>
                 <td><%= reminder.parent_name %></td>
                 <td><%= reminder.parent_phone %></td>
-                <td>
+                <!-- <td>
                   <% if reminder.vaccine1 %>
                     <%= t('reminder.index.vaccination_done') %>
                   <% else %>
@@ -68,12 +63,12 @@
                   <% else %>
                     <%= t('reminder.index.vaccination_not_done') %>
                   <% end %>
-                </td>
+                </td> -->
 
-                <td><%= link_to t('reminder.index.show_link'), reminder_path(reminder) %></td>
-                <td><a href="tel:<%= reminder.parent_phone %>"><%= t('reminder.index.call_link') %></a></td>
-                <td><%= link_to t('reminder.index.edit_link'), edit_reminder_path(reminder) %></td>
-                <td><%= link_to t('reminder.index.delete_link'), reminder_path(reminder), method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %></td>
+                <td><%= link_to t('reminder.index.show_link'), reminder_path(reminder), class:"warning" %></td>
+                <td><a class="success" href="tel:<%= reminder.parent_phone %>"><%= t('reminder.index.call_link')%></a></td>
+                <td><%= link_to t('reminder.index.edit_link'), edit_reminder_path(reminder), class:"info" %></td>
+                <td><%= link_to t('reminder.index.delete_link'), reminder_path(reminder), class:"danger", method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %></td>
                 </tr>
               <% end %>
 
@@ -99,16 +94,6 @@
       </div>
 
       <%= link_to t('reminder.index.new_reminder'), new_reminder_path, class:"btn btn-primary reminder d-flex justify-content-center" %>
-
-      <div>
-        <h4 class="list">Liste détaillée des vaccinations</h4>
-        <p><%= t('reminder.index.vaccin1') %>: <%= t('reminder.index.vaccine1') %></p>
-        <p><%= t('reminder.index.vaccin2') %>: <%= t('reminder.index.vaccine2') %></p>
-        <p><%= t('reminder.index.vaccin3') %>: <%= t('reminder.index.vaccine3') %></p>
-        <p><%= t('reminder.index.vaccin4') %>: <%= t('reminder.index.vaccine4') %></p>
-        <p><%= t('reminder.index.vaccine5') %>: <%= t('reminder.index.vaccine5') %></p>
-      </div>
-
 
     </div>
   </div>

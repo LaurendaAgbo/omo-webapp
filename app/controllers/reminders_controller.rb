@@ -1,4 +1,7 @@
 class RemindersController < ApplicationController
+
+  layout 'reminders'
+
   before_action :authenticate_admin!, only: %i[index new show]
   before_action :must_be_authorized, only: %i[edit destroy]
 

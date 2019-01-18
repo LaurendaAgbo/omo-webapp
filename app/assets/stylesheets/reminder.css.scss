@@ -12,9 +12,16 @@
 
 .reminder-submit {
   width: auto !important;
+  border-radius: 4px !important;
 
 }
 
+.info {
+  color: #0BBBEF;
+}
+.warning {
+  color: #EF7C0B;
+}
 .success {
   color: #28a745;
 }
@@ -24,4 +31,8 @@
 
 .reminder-show {
   margin-left: 0 !important
+}
+
+.navbar {
+  background-color: #6c757d !important;
 }
