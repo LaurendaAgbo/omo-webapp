@@ -370,7 +370,7 @@ select.form-control:not([size]):not([multiple]) {
   padding-right: 40px;
 }
 
-.btn, .btn:hover {
+.btn {
   border-radius: 0px;
   border: none;
   font-size: 1.375rem;
@@ -392,7 +392,7 @@ a.btn {
   cursor: not-allowed;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary[disabled] {
+.btn-primary, .btn-primary[disabled] {
   // background-color:#072E82;
   // height: 20%;
   // border-radius: 20px
@@ -407,7 +407,7 @@ a.btn {
 
 }
 
-.btn-secondary, .btn-secondary:hover, .btn-secondary[disabled] {
+.btn-secondary, .btn-secondary[disabled] {
   background-color: #FF9300;
   height: 40%;
 }

@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 20190117145841) do
     t.boolean "vaccine3"
     t.boolean "vaccine4"
     t.boolean "vaccine5"
-    t.integer "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "admin_id"
   end
 
 end

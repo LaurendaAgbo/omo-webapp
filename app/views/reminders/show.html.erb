@@ -1,58 +1,69 @@
-<% if notice %>
-  <p class="notice alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="notice alert alert-danger"><%= alert %></p>
-<% end %>
+<%= stylesheet_link_tag "reminder" %>
 
-<h1><%= t('reminder.show.page_title', child_name: @reminder.child_name) %></h1>
+<div class="container pt-5">
+  <div class=" content-box">
+    <div class=" row">
+      <div class="col-11">
+        <% if notice %>
+          <p class="notice alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="notice alert alert-danger"><%= alert %></p>
+        <% end %>
 
-<div><%= t('reminder.index.child_name') + ': ' + @reminder.child_name %></div>
-<div><%= t('reminder.index.child_birthday') + ': ' + @reminder.child_birthday.to_s %></div>
-<div><%= t('reminder.index.parent_name') + ': ' + @reminder.parent_name %></div>
-<div><%= t('reminder.index.parent_phone') + ': ' + @reminder.parent_phone %></div>
-<div>
-  <%= t('reminder.index.vaccine1') + ': ' %>
-  <% if @reminder.vaccine1 %>
-    <%= t('reminder.index.vaccination_done') %>
-  <% else %>
-    <%= t('reminder.index.vaccination_not_done') %>
-  <% end %>
-</div>
-<div>
-  <%= t('reminder.index.vaccine2') + ': ' %>
-  <% if @reminder.vaccine2 %>
-    <%= t('reminder.index.vaccination_done') %>
-  <% else %>
-    <%= t('reminder.index.vaccination_not_done') %>
-  <% end %>
-</div>
-<div>
-  <%= t('reminder.index.vaccine3') + ': ' %>
-  <% if @reminder.vaccine3 %>
-    <%= t('reminder.index.vaccination_done') %>
-  <% else %>
-    <%= t('reminder.index.vaccination_not_done') %>
-  <% end %>
-</div>
-<div>
-  <%= t('reminder.index.vaccine4') + ': ' %>
-  <% if @reminder.vaccine4 %>
-    <%= t('reminder.index.vaccination_done') %>
-  <% else %>
-    <%= t('reminder.index.vaccination_not_done') %>
-  <% end %>
-</div>
-<div>
-  <%= t('reminder.index.vaccine5') + ': ' %>
-  <% if @reminder.vaccine5 %>
-    <%= t('reminder.index.vaccination_done') %>
-  <% else %>
-    <%= t('reminder.index.vaccination_not_done') %>
-  <% end %>
-</div>
-<div>
-  <a href="tel:<%= @reminder.parent_phone %>"><%= t('reminder.index.call_link') %></a>
-  <%= link_to t('reminder.index.edit_link'), edit_reminder_path(@reminder) %>
-  <%= link_to t('reminder.index.delete_link'), reminder_path(@reminder), method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %>
-</div>
+        <h1 class="pt-5 pb-3"><%= t('reminder.show.page_title', child_name: @reminder.child_name) %></h1>
+
+        <div><%= t('reminder.index.child_name') + ': ' + @reminder.child_name %></div>
+        <div><%= t('reminder.index.child_birthday') + ': ' + @reminder.child_birthday.to_s %></div>
+        <div><%= t('reminder.index.parent_name') + ': ' + @reminder.parent_name %></div>
+        <div><%= t('reminder.index.parent_phone') + ': ' + @reminder.parent_phone %></div>
+        <div>
+          <%= t('reminder.index.vaccine1') + ': ' %>
+          <% if @reminder.vaccine1 %>
+            <span class="success"><%= t('reminder.index.vaccination_done') %></span>
+          <% else %>
+            <span class="danger"><%= t('reminder.index.vaccination_not_done') %></span>
+          <% end %>
+        </div>
+        <div>
+          <%= t('reminder.index.vaccine2') + ': ' %>
+          <% if @reminder.vaccine2 %>
+            <span class="success"><%= t('reminder.index.vaccination_done') %></span>
+          <% else %>
+            <span class="danger"><%= t('reminder.index.vaccination_not_done') %></span>
+          <% end %>
+        </div>
+        <div>
+          <%= t('reminder.index.vaccine3') + ': ' %>
+          <% if @reminder.vaccine3 %>
+            <span class="success"><%= t('reminder.index.vaccination_done') %></span>
+          <% else %>
+            <span class="danger"><%= t('reminder.index.vaccination_not_done') %></span>
+          <% end %>
+        </div>
+        <div>
+          <%= t('reminder.index.vaccine4') + ': ' %>
+          <% if @reminder.vaccine4 %>
+            <span class="success"><%= t('reminder.index.vaccination_done') %></span>
+          <% else %>
+            <span class="danger"><%= t('reminder.index.vaccination_not_done') %></span>
+          <% end %>
+        </div>
+        <div>
+          <%= t('reminder.index.vaccine5') + ': ' %>
+          <% if @reminder.vaccine5 %>
+            <span class="success"><%= t('reminder.index.vaccination_done') %></span>
+          <% else %>
+            <span class="danger"><%= t('reminder.index.vaccination_not_done') %></span>
+          <% end %>
+        </div>
+        <div class="pt-4">
+          <a class="btn btn-primary reminder-submit reminder-show" href="tel:<%= @reminder.parent_phone %>"><%= t('reminder.index.call_link') %></a>
+          <%= link_to t('reminder.index.edit_link'), edit_reminder_path(@reminder), class: "btn btn-primary reminder-submit" %>
+          <%= link_to t('reminder.index.delete_link'), reminder_path(@reminder), class: "btn btn-primary reminder-submit", method: :delete, data: { confirm: t('reminder.index.confirm_deletion') } %>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
