@@ -4,7 +4,7 @@ class VaccineReminderJob < ApplicationJob
   def perform(reminder_id, parent_phone, vaccination_number)
     reminder = Reminder.find(reminder_id)
 
-    response = nexmo.create_call({
+    response = nexmo.calls.create({
       to: [
         {
           type: 'phone',
@@ -16,7 +16,8 @@ class VaccineReminderJob < ApplicationJob
         number: ENV['NEXMO_PHONE_NUMBER']
       },
       answer_url: [
-        outbound_call_url("#{ENV['ROOT_URL']}/call/#{vaccination_number}/#{@reminder.id}")
+        # outbound_call_url("#{ENV['ROOT_URL']}/call/#{vaccination_number}/#{@reminder.id}")
+        outbound_call_url("http://4078f016.ngrok.io/call/#{vaccination_number}/#{@reminder.id}")
       ]
     })
 
@@ -40,7 +41,7 @@ class VaccineReminderJob < ApplicationJob
   def nexmo
     client = Nexmo::Client.new(
       application_id: ENV['NEXMO_APP_ID'],
-      private_key: File.read(ENV['NEXMO_SECRET_KEY'])
+      private_key: File.read(Rails.root.join(ENV['NEXMO_PRIVATE_KEY_FILE']))
     )
   end
 end

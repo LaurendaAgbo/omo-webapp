@@ -17,7 +17,24 @@ class RemindersController < ApplicationController
     p params
 
     if @reminder.save
-      #VaccineReminderJob.set(wait: 1.minute).perform_later(@reminder.id, @reminder.parent_phone, 1)
+      response = nexmo.calls.create({
+        to: [
+          {
+            type: 'phone',
+            number: @reminder.parent_phone
+          }
+        ],
+        from: {
+          type: 'phone',
+          number: ENV['NEXMO_PHONE_NUMBER']
+        },
+        answer_url: [
+          # outbound_call_url("#{ENV['ROOT_URL']}/call/#{vaccination_number}/#{@reminder.id}")
+          "http://4078f016.ngrok.io/call/1/#{@reminder.id}"
+        ]
+      })
+
+      # VaccineReminderJob.set(wait: 1.minute).perform_later(@reminder.id, @reminder.parent_phone, 1)
       # VaccineReminderJob.set(wait: 1.weeks).perform_later(@reminder.id, @reminder.parent_phone, 1)
       # VaccineReminderJob.set(wait: 6.weeks).perform_later(@reminder.id, @reminder.parent_phone, 2)
       # VaccineReminderJob.set(wait: 10.weeks).perform_later(@reminder.id, @reminder.parent_phone, 3)
@@ -99,5 +116,12 @@ class RemindersController < ApplicationController
     else
       redirect_to user_session_path
     end
+  end
+
+  def nexmo
+    client = Nexmo::Client.new(
+      application_id: ENV['NEXMO_APP_ID'],
+      private_key: File.read(Rails.root.join(ENV['NEXMO_PRIVATE_KEY_FILE']))
+    )
   end
 end
