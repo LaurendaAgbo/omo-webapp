@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag "reminder" %>
+
+<div class="container-fluid pt-5">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center"><%= t('abuse.index.page_title') %></h1>
+
+      <div class="py-5">
+        <table class="table table-striped table-bordered table-sm " cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th><%= t('abuse.index.description') %></th>
+              <th><%= t('abuse.index.address') %></th>
+              <th><%= t('abuse.index.contact') %></th>
+              <th><%= t('abuse.index.show_link') %></th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <% @abuses.each do |abuse| %>
+            <tr>
+              <td><%= abuse.description %></td>
+              <td><%= abuse.address %></td>
+              <td><%= abuse.contact %></td>
+
+              <td><%= link_to t('abuse.index.show_link'), abus_path(abuse), class:"warning" %></td>
+            </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>

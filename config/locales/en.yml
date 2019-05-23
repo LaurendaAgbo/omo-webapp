@@ -44,3 +44,16 @@ en:
       vaccine4: "DTCP/Hep B 3 + Polio 3 + Polio injectable"
       vaccine5: "VAA and VAR"
       submit_button: "Save reminder"
+  abuse:
+    index:
+      page_title: "List of abuses"
+      new_abuse: "Create a new abuse"
+      description: "Description"
+      address: "Address"
+      details: "Details"
+      contact: "Contact"
+      photo: "Picture"
+      show_link: "View more"
+    show:
+      page_title: "Abuse information sheet N°%{abuse_id}"
+      list: "List of abuse"

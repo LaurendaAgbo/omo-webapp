@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   resources :reminders
 
+  resources :abuses
+
   get 'call/:vaccination_number/:reminder_id', to: 'reminders#call'
 end

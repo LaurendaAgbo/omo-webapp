@@ -174,3 +174,16 @@ fr:
       list: "Liste des rappels"
     edit:
       page_title: "Mettre à jour le rappel"
+  abuse:
+    index:
+      page_title: "Liste des abus"
+      new_abuse: "Créer un nouvel abus"
+      description: "Description"
+      address: "Adresse"
+      details: "Détails"
+      contact: "Contact"
+      photo: "Photo"
+      show_link: "Voir l'abus"
+    show:
+      page_title: "Fiche de dénonciation d'abus N°%{abuse_id}"
+      list: "Liste des abus"

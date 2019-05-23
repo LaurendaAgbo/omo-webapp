@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "reminder" %>
+
+<div class="container pt-5">
+  <div class=" content-box">
+    <div class=" row">
+      <div class="col-11">
+        <% if notice %>
+          <p class="notice alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="notice alert alert-danger"><%= alert %></p>
+        <% end %>
+
+        <h1 class="pt-5 pb-3"><%= t('abuse.show.page_title', abuse_id: @reminder.id) %></h1>
+
+        <div><%= t('abuse.index.description') + ': ' + @abuse.description %></div>
+        <div><%= t('abuse.index.address') + ': ' + @abuse.address %></div>
+        <div><%= t('abuse.index.details') + ': ' + @abuse.details %></div>
+        <div><%= t('abuse.index.contact') + ': ' + @abuse.contact %></div>
+        <div class="pt-4">
+          <a class="btn btn-primary reminder-submit reminder-show" href="tel:<%= @abuse.contact %>"><%= t('reminder.index.call_link') %></a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
